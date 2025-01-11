@@ -1998,3 +1998,178 @@ int main() {
   student(5,7);                      // call parameterised constructor 
 
 }
+
+
+
+inheritance with self constructor
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class teacher{
+    public:
+    teacher(){
+        cout<<"teacher"<<endl;
+    }
+};
+
+class artist{
+    public:
+    artist(){
+        cout<<"artist"<<endl;
+    }
+};
+
+class person:public teacher,public artist{
+    public:
+   person(){
+       cout<<"person";
+   }
+};
+int main() {
+person obj;
+}
+
+
+
+
+singlelevel inheritance
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class person{
+ public:
+ string name="jatin";
+ int age=23;
+};
+class student:public person{
+  public:
+  void show(){
+      cout<<name<<age;
+  }
+};
+int main() {
+student obj;
+obj.show();
+}
+
+multi-level inheritance
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class person{
+ public:
+ string name="jatin";
+ int age=23;
+};
+class student:public person{
+  public:
+  void show(){
+      cout<<name<<age;
+  }
+};
+
+class teacher:public student{
+    public:
+    void display(){
+        cout<<age<<name;
+    }
+};
+int main() {
+teacher obj;
+obj.display();
+}
+
+multiple inheritance
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class teacher{
+    public:
+    string name="jatin";
+    int age=23;
+};
+
+class artist{
+    public:
+    int roll=23232;
+};
+
+class person:public teacher,public artist{
+    public:
+    void show(){
+        cout<<age<<name<<roll;
+    }
+};
+int main() {
+person obj;
+obj.show();
+}
+
+herirical inheritance
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class teacher{
+    public:
+    teacher(){
+        cout<<"teacher"<<endl;
+    }
+};
+
+class artist:public teacher{
+    public:
+    artist(){
+        cout<<"artist"<<endl;
+    }
+};
+
+class person:public teacher{
+    public:
+   person(){
+       cout<<"person";
+   }
+};
+int main() {
+person obj;
+artist obj1;
+}
+
+hybrid inheritance
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class teacher{
+    public:
+    teacher(){
+        cout<<"teacher"<<endl;
+    }
+};
+
+class artist:public teacher{
+    public:
+    artist(){
+        cout<<"artist"<<endl;
+    }
+};
+
+class person:public teacher{
+    public:
+   person(){
+       cout<<"person"<<endl;
+   }
+};
+
+class basee: public teacher, public artist,public person{
+    public:
+
+};
+int main() {                                     ///   not completed
+basee obj;
+}
+
