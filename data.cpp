@@ -1999,6 +1999,82 @@ int main() {
 
 }
 
+ shallowcopy constructor
+
+
+#include <iostream>
+using namespace std;
+
+class shallowcopy{
+   
+   int a,*p;
+   public:
+   shallowcopy(int x, int y){
+       a=x;
+       p=new int;
+       *p=y;
+   }
+   shallowcopy(shallowcopy &obj){
+       a=obj.a;
+       p=obj.p;
+   }
+   void update(){
+       a=a+1;
+       *p=*p+1;
+   }
+   void show(){
+       cout<<"value of a"<<a<<endl;
+       cout<<"address of p"<<p<<"value of p"<<*p<<endl;
+   }
+};
+int main() {
+   shallowcopy obj1(4,5);
+   shallowcopy obj2(obj1);
+   
+   obj1.update();
+   obj2.show();
+   obj1.show();
+}
+
+deep copy constructor
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+class deep{
+   
+   int a,*p;
+   public:
+   deep(int x, int y){
+       a=x;
+       p=new int;
+       *p=y;
+   }
+   deep(deep &obj){
+       a=obj.a;
+       p=new int;
+       *p=*(obj.p);
+   }
+   void update(){
+       a=a+1;
+       *p=*p+1;
+   }
+   void show(){
+      
+       cout<<p<<endl<<*p;
+   }
+};
+int main() {
+   deep obj1(4,5);
+   deep obj2(obj1);
+   
+   obj1.update();
+   obj1.show();
+   obj2.show();
+}
+
+
 
 
 inheritance with self constructor
@@ -2172,4 +2248,34 @@ class basee: public teacher, public artist,public person{
 int main() {                                     ///   not completed
 basee obj;
 }
+
+
+operator +(number )
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+class number{
+   
+   int num;
+   public:
+   number(int n=0){
+       num=n;
+   }
+   void operator +(number &obj){
+       int ans;
+       ans=num+obj.num;
+       cout<<ans;
+   }
+  
+};
+int main() {
+number obj1(5);
+number obj2(6);
+obj1+obj2;
+
+return 0;
+}
+
 
