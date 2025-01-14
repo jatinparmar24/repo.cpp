@@ -2278,4 +2278,52 @@ obj1+obj2;
 return 0;
 }
 
+virtual polymorphism
+
+
+#include <iostream>
+using namespace std;
+
+class A{
+  
+  public:
+  virtual void show(){
+      cout<<"class A\n";
+  }
+};
+
+class B: virtual public A{
+  
+  public:
+  void show(){
+      cout<<"class B\n";
+  }
+};
+
+class C: virtual public A{
+   public:
+   void show(){
+       cout<<"class C";
+   }
+};
+
+class D: public B, public C{
+    public:
+    void show(){
+        cout<<"class D";
+    }
+    
+};
+
+int main() {
+A*obj;
+A obj1;
+B obj2;
+C obj3;
+D obj4;
+obj=&obj3;
+obj->show();
+
+}
+
 
