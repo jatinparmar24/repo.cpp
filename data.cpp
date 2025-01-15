@@ -2327,3 +2327,60 @@ obj->show();
 }
 
 
+static function
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+class bank{
+   public:
+   static int amount;
+   void showamount(int x){
+       amount=amount-x;
+       cout<<"amount = "<<amount<<endl;
+   }
+};
+
+int bank::amount=10;
+
+int main() {
+
+bank obj1;
+obj1.showamount(2);
+cout<<endl;
+bank obj2;
+obj2.showamount(6);
+}
+
+static member function
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+class bank{
+   public:
+   static int amount;
+   
+   static void showamount(int x){
+       amount=amount-x;
+       cout<<"amount = "<<amount<<endl;
+   }
+};
+
+int bank::amount=10;
+
+int main() {
+
+bank obj1;
+obj1.showamount(2);
+cout<<endl;
+bank obj2;
+obj2.showamount(4);
+
+bank::showamount(3);
+}
+
+
+
