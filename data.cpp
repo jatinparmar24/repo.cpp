@@ -2241,13 +2241,16 @@ class person:public teacher{
    }
 };
 
-class basee: public teacher, public artist,public person{
+class basee: public artist,public person{
     public:
-
+basee(){
+ cout<<"base"<<endl;
+}
 };
-int main() {                                     ///   not completed
+int main() {                                  
 basee obj;
 }
+
 
 
 operator +(number )
