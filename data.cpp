@@ -107,7 +107,7 @@
      cout<<"num is invalid";
  }
 
-
+// num in reverse
 #include<iostream>
 using namespace std;
 int main(){
@@ -124,7 +124,7 @@ cout<<num%10;
 }
 
 
-
+// get 10 
 // Online C++ compiler to run C++ program online
 #include <iostream>
 using namespace std;
@@ -138,6 +138,8 @@ int main() {
       cout<<"invalid";
   }
 }
+
+// days of week
 #include <iostream>
 using namespace std;
 int main() { 
@@ -169,7 +171,10 @@ else{
     cout<<"invalid"; 
 }
 
+}
 
+
+// month with most days
 #include <iostream>
 using namespace std;
 int main() { 
@@ -189,6 +194,8 @@ if(num==4 ||num==6 ||num==9 || num==11){
         cout<<"invalid";
     }
 }
+
+// leap year
 #include <iostream>
 using namespace std;
 int main() { 
@@ -205,7 +212,7 @@ if(year%4==0 && year%100!=0 || year%400==0 ){
 int main() {
  int mrp;
  int sp;
- cout<<"enter valve=";
+ cout<<"enter value=";
  cin>>mrp;
  if(mrp==1000){
      int cashback=200;
@@ -221,6 +228,8 @@ int main() {
      cout<<"invalid";
  }
 }
+
+
 #include <iostream>
 using namespace std;
 int main() {
@@ -257,6 +266,8 @@ int main() {
       
     }
 }
+
+
 #include <iostream>
 using namespace std;
 int main() {
@@ -288,6 +299,8 @@ int main() {
      }
     }
  }
+
+
 #include <iostream>
 using namespace std;
 int main(){
@@ -297,6 +310,8 @@ int main(){
      cout<<2*num<<endl;
  }
 }
+
+
 #include <iostream>
 using namespace std;
 int main(){
@@ -307,6 +322,8 @@ int main(){
  }
  while(num<=10);
 }
+
+
 // Online C++ compiler to run C++ program online
 #include <iostream>
 using namespace std;
@@ -318,6 +335,8 @@ int main(){
      
  }
 }
+
+
 reverse 2's table
 
 #include <iostream>
@@ -378,6 +397,8 @@ int main() {
   }
    cout<<sum<<endl;
 }
+
+// ascii values
 #include <iostream>
 using namespace std;
 int main() {
@@ -401,7 +422,7 @@ int main() {
   } 
 }
 
-
+// prime number
 #include <iostream>
 using namespace std;
 int main() {
@@ -420,6 +441,8 @@ int main() {
      cout<<"not";
   } 
 }
+
+
 reverse with while loop
 #include <iostream>
 using namespace std;
@@ -434,6 +457,8 @@ int main() {
    }
           cout<<rv;
 }
+
+
 with for loop
 #include <iostream>
 using namespace std;
@@ -449,7 +474,8 @@ int main() {
           cout<<rv;
 }
 
-repeat 1 with loop
+
+// repeat 1 with loop
 
 #include <iostream>
 using namespace std;
@@ -463,7 +489,7 @@ for(int i=1; i<=num; i++)
 }
 }
 
-reverse with for loop
+// reverse with for loop
 
 #include <iostream>
 using namespace std;
@@ -494,6 +520,9 @@ for(int i=1; i<=num; i++)
 }
 cout<<sum;
 }
+
+
+// fibonachi series
 
 #include <iostream>
 using namespace std;
@@ -532,7 +561,8 @@ if(++k,i,j++){
 }
 }
 
-amstrong num
+// amstrong num
+
 #include <iostream>
 using namespace std;
 int main() {
@@ -553,8 +583,8 @@ else{
 }
 }
 
-Armstrong with for loop
-
+// Armstrong with for loop
+// sum of all there digit's cube is equal to it self
 #include <iostream>
 using namespace std;
 int main() {
@@ -654,7 +684,7 @@ int main() {
   }
 }
 
-perfect number
+// perfect number
 // Online C++ compiler to run C++ program online
 #include <iostream>
 using namespace std;
@@ -709,7 +739,7 @@ int main() {
       cout<<lcm;
 }
 
-gp series
+// gp series
 
 #include <iostream>
 using namespace std;
@@ -1475,6 +1505,7 @@ int main() {
      
  }
 
+
 pallindrome
 
 #include <iostream>
@@ -1545,6 +1576,8 @@ int main()
  cout<<sum(10)  ;       ( answer 55  )
 }
 
+
+
  factorial with recurrsion 
 
 #include <iostream>
@@ -1560,6 +1593,8 @@ int main()
 {
  cout<<sum(5)  ;   (answer 120 )
 }
+
+
 
 fibonachi with recursion 
 
