@@ -2422,3 +2422,63 @@ bank::showamount(3);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DSA starts from here ========================================================================================
+// BY VIKAS SIR
+
+//   1  =   bubble sort method
+
+
+#include <iostream>
+using namespace std;
+void bubble(int arr[],int s)
+{
+  int temp;
+  for(int i=0; i<s;++i)
+  {
+      for(int j=0; j<s-i-1; ++j)
+      {
+         if(arr[j]>arr[j+1]){
+             temp=arr[j+1];
+             arr[j+1]=arr[j];
+             arr[j]=temp;
+         } 
+          
+      }
+      
+  }
+  for(int i=0;i<s;++i){
+          cout<<arr[i]<<"\n";
+      }
+}
+
+int main() {
+  int arr[]={11,55,9,88,40};
+  int s = sizeof(arr)/sizeof(arr[0]);
+  bubble(arr ,s);
+}
+// ans arrange arr in ascending order
+
+//  2 =  Insertion Sort
