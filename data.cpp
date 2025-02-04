@@ -2482,3 +2482,140 @@ int main() {
 // ans arrange arr in ascending order
 
 //  2 =  Insertion Sort
+
+
+#include <iostream>
+using namespace std;
+void insrt (int arr[] , int s)
+{
+    for(int i=0; i<s; ++i)
+    {
+        int mn=i;
+        while(mn>0 && arr[mn]<arr[mn-1])
+        {
+            int temp;
+            temp=arr[mn-1];
+            arr[mn-1]=arr[mn];
+            arr[mn]=temp;
+            mn--;
+        }
+    }
+    cout<<"\n after insertion\n";
+    for(int i=0;i<s; ++i){
+        cout<<arr[i]<<"\t";
+    }
+}
+int main() {
+int arr[]={10,8,50,2,20};
+int s = sizeof(arr)/sizeof arr[0];
+insrt(arr,s);
+}
+// ans arrange arr in ascending order
+
+// 3 = Selection Sort
+
+
+#include <iostream>
+using namespace std;
+void selectionsort (int arr[] , int s)
+{
+   int small;
+   for(int i=0; i<s;++i)
+   {
+       small=i;
+       for(int j=i+1; j<s; ++j)
+       {
+           if(arr[small]>arr[j])
+           {
+               small=j;
+           }
+       }
+       if(small!=1){
+           int temp;
+           temp=arr[i];
+           arr[i]=arr[small];
+           arr[small]=temp;
+       }
+   }
+   }
+
+int main() {
+int arr[]={9,2,1,6,7};
+int s = sizeof(arr)/sizeof arr[0];
+for(int i=0;i<s;++i){
+   cout<<arr[i]<<"\t"; 
+}
+cout<<"\n after selection sort\n";
+selectionsort(arr,s);
+for(int i=0;i<s;++i){
+   cout<<arr[i]<<"\t"; 
+}
+}
+// ans arrange arr in ascending order
+
+
+#include <iostream>
+using namespace std;
+int part(int arr[] , int low , int high)
+{
+    int pivot=arr[low];
+    int i=low+1;
+    int j=high;
+    do
+    {
+        while(arr[i]<pivot)
+        {
+            i++;
+        }
+        while(arr[j]>pivot)
+        {
+            j--;
+        }
+        if(i<j)
+        {
+            int temp;
+            temp=arr[j];
+            arr[j]=arr[i];
+            arr[i]=temp;
+        }
+    }
+    while(i<j);
+    int temp;
+    temp=arr[low];
+    arr[low]=arr[j];
+    arr[j]=temp;
+    return j;
+}
+
+void qksrt (int arr[], int low,int high)
+{
+    int pv;
+    if(low<high)
+    {
+        pv=part(arr,low,high);
+        qksrt(arr,0,pv-1);
+        qksrt(arr,pv+1,high);
+    }
+}
+
+int main() {
+int arr[]={5,9,5,6,2};
+int s = sizeof(arr)/sizeof arr[0];
+for(int i=0;i<s;++i){
+   cout<<arr[i]<<"\t"; 
+}
+cout<<"\n";
+qksrt(arr,0,s-1);
+cout<<"\n after quick sort \n";
+for(int i=0;i<s;i++)
+{
+    cout<<arr[i]<<"\t";
+}
+}
+// ans arrange arr in ascending order
+
+
+
+
+
+
