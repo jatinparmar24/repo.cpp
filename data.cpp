@@ -2446,6 +2446,8 @@ bank::showamount(3);
 
 
 DSA starts from here ========================================================================================
+
+
 // BY VIKAS SIR
 
 //   1  =   bubble sort method
@@ -2456,18 +2458,23 @@ using namespace std;
 void bubble(int arr[],int s)
 {
   int temp;
-  for(int i=0; i<s;++i)
+  for(int i=0; i<s-1;++i)
   {
+      bool t=true;
       for(int j=0; j<s-i-1; ++j)
       {
+
          if(arr[j]>arr[j+1]){
              temp=arr[j+1];
              arr[j+1]=arr[j];
              arr[j]=temp;
+             t=false;
          } 
           
       }
-      
+      if (t==true){
+        break;
+      }  
   }
   for(int i=0;i<s;++i){
           cout<<arr[i]<<"\n";
@@ -2509,7 +2516,7 @@ int main() {
 int arr[]={10,8,50,2,20};
 int s = sizeof(arr)/sizeof arr[0];
 insrt(arr,s);
-}
+}   
 // ans arrange arr in ascending order
 
 // 3 = Selection Sort
@@ -2530,7 +2537,7 @@ void selectionsort (int arr[] , int s)
                small=j;
            }
        }
-       if(small!=1){
+       if(small!=i){
            int temp;
            temp=arr[i];
            arr[i]=arr[small];
@@ -2565,7 +2572,7 @@ int part(int arr[] , int low , int high)
     int j=high;
     do
     {
-        while(arr[i]<pivot)
+        while(arr[i]<=pivot)
         {
             i++;
         }
@@ -2641,7 +2648,7 @@ void combine(int arr[],int low,int mid,int high)
             j++;
             k++;
         }
-    }
+    } 
     while(i<=mid)
     {
         bk[k]=arr[i];
@@ -2670,7 +2677,6 @@ void mergesrt(int arr[],int low,int high)
         combine(arr,low,mid,high);
     }
 }
-
 
 int main() {
   int arr[]={9,2,3,1,6,5};
