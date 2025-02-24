@@ -2699,6 +2699,10 @@ int main() {
 
 // template = for same datatype
 
+
+
+// function template
+
 #include <iostream>
 using namespace std;
 template <typename t1>
@@ -2708,4 +2712,46 @@ t1 sum(t1 a , t1 b){
 }
 int main() {
   cout<<sum(3,5);
+}
+
+
+
+
+// class template
+
+#include <iostream>
+using namespace std;
+template<typename v1>
+class cybrom{
+v1 a;
+public:cybrom(v1 x)
+{
+    a=x;
+}
+v1 show(){
+    return a+1;
+}      
+};
+int main() {
+cybrom<int>obj(10);
+cout<<obj.show();
+}
+
+
+
+// without constructure
+#include <iostream>
+using namespace std;
+template<typename x1 , typename x2>
+class sehore
+{
+  public:void sum(x1 t1, x2 t2)
+  {
+      cout<<t1+t2;
+  }
+};
+
+int main() {
+sehore<int,float>obj;
+obj.sum(5,4.5);
 }
