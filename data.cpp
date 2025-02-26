@@ -2755,3 +2755,51 @@ int main() {
 sehore<int,float>obj;
 obj.sum(5,4.5);
 }
+
+
+
+
+// namespace std  ==============
+
+
+#include <iostream>
+using namespace std;
+namespace cybrom
+{
+    int a=50;
+    int b=10;
+    void show(){
+        cout<<"return = "<<a+b;
+    }
+    class bhopal
+    {
+        public:int sqr(int a)
+        {
+            return a*a;
+        }
+    };
+    class iostreamx{
+      public:void fun()
+      {
+          cout<<"\n fun is fun \n";
+      }
+    } coutx;
+}
+
+using namespace cybrom;
+
+int main() {
+ cout<<a<<"\n";
+ cout<<b<<"\n";
+ show();
+ bhopal b;
+ cout<<"\n";
+ cout<<b.sqr(8);
+ coutx.fun();
+}
+// ans 
+// 50
+// 10
+// return = 60
+// 64
+//  fun is fun 
