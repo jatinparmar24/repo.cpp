@@ -2803,3 +2803,30 @@ int main() {
 // return = 60
 // 64
 //  fun is fun 
+
+
+//  multiple namespace
+
+#include <iostream>
+using namespace std;
+namespace cybrom
+{
+    void student()
+    {
+        cout<<"\n student \n";
+    }
+    namespace bhopal
+    {
+        void student()
+        {
+            cout<<"\n bhopal \n";
+        }
+    }
+}
+int main() {
+  cybrom::student();
+  cybrom::bhopal::student();
+}
+// ans 
+student
+bhopal
