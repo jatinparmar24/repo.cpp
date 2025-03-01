@@ -2830,3 +2830,249 @@ int main() {
 // ans 
 student
 bhopal
+
+
+
+
+
+// array template = 
+
+#include <iostream>
+using namespace std;
+#include <array>
+#include <algorithm>
+
+int main() {
+ 
+ array<int,6>arr{34,5,12,87,5,3};
+ sort(arr.begin(),arr.end());
+ cout<<"min = "<<arr.front();
+ cout<<"\n max = "<<arr.back();
+ cout<<"\n size of array = "<<arr.size()<<"\n";
+ for(int i=0; i<arr.size();i++)
+ {
+     cout<<arr.at(i)<<"\t";
+ }
+ 
+ cout<<"\n first value of array = "<<arr.front();
+ cout<<"\n last value of array = "<<arr.back();
+ cout<<"\n second (with pointer)last value = "<<*(arr.end()-2);   //   it gives second highest value   (not perfect in  duplicate)
+ cout<<"\n second (with arr )last value = "<<arr[arr.size()-3];   // another method                 (not perfect in  duplicate)
+ 
+}
+// ans
+min = 3
+ max = 87
+ size of array = 6
+3	5	5	12	34	87	
+ first value of array = 3
+ last value of array = 87
+ second (with pointer * )last last value = 34
+ second (with arr )last last value = 12
+
+
+
+// find largest number in case of duplicate
+
+ 
+#include <iostream>
+using namespace std;
+#include <array>
+#include <algorithm>
+
+int main() {
+ 
+ array<int,6>arr{5,5,2,3,4,1};
+ sort(arr.begin(),arr.end());
+int m = arr[arr.size()-1];
+ for(int i=arr.size()-1; i>=0; i--){
+     if(arr[i]<m){
+         cout<<arr[i];
+              break;
+     }
+
+ }
+ 
+}
+
+
+
+
+// multiple vector with static value and auot function
+
+
+#include <iostream>
+using namespace std;
+#include <vector>
+int main() {
+  vector<int>v{2,3,4,5,6};
+  for(auto p:v){
+      cout<<p<<"\t";
+  }
+  cout<<"\n";
+  
+  vector<string>v2{"sun","mon","tuesday"};
+  for(auto k:v2){
+      cout<<k<<"\t";
+  }
+  cout<<"\n";
+  
+  vector<int>v3(5);  //   defalut value =0
+  for(auto a:v3){
+      cout<<a<<"\t";
+  }
+  cout<<"\n";
+  
+  vector<int>v4(5,10);
+  v4[3]=1000;
+   for(auto s:v4){
+      cout<<s<<"\t";
+  }
+}
+
+
+// output
+
+2	3	4	5	6	
+sun	mon	tuesday	
+0	0	0	0	0	
+10	10	10	1000	10	
+
+
+
+
+
+// insert dynamic data in vector = 
+
+#include <iostream>
+using namespace std;
+#include <vector>
+int main() {
+    
+    vector<int>vec;
+    int n,a;
+    cout<<"Enter The Size of Vetor = ";
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        cout<<"Enter digit = ";
+        cin>>a;
+        vec.push_back(a);
+    }
+    cout<<"\n data of vector \n";
+    
+    for(auto p:vec){
+        cout<<p<<"\t";
+    }
+    
+
+}
+
+
+
+// delete last data in vector =  pop_back
+
+#include <iostream>
+using namespace std;
+#include <vector>
+int main() {
+    
+    vector<int>vec;
+    int n,a;
+    cout<<"Enter The Size of Vetor = ";
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        cout<<"Enter digit = ";
+        cin>>a;
+        vec.push_back(a);
+    }
+    cout<<"\n data of vector \n";
+    
+    for(auto p:vec){
+        cout<<p<<"\t";
+    }
+    
+    cout<<"\n after deletion \n";
+    
+    vec.pop_back();
+     for(auto p:vec){
+        cout<<p<<"\t";
+    }
+    
+
+}
+
+
+
+// with iterator and insert = to add at random place from starting
+
+
+#include <iostream>
+using namespace std;
+#include <vector>
+#include <iterator>
+int main() {
+    
+    vector<int>vec;
+    int n,a;
+    cout<<"Enter The Size of Vetor = ";
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        cout<<"Enter digit = ";
+        cin>>a;
+        vec.push_back(a);
+    }
+    cout<<"\n data of vector \n";
+    
+    for(auto p:vec){
+        cout<<p<<"\t";
+    }
+    
+    cout<<"\n with iterator \n";
+    
+    vector<int>::iterator it=vec.begin();
+    vec.insert(it+1,100);
+    cout<<"\n after iteration \n";
+    for(auto j:vec){
+        cout<<j<<"\t";
+    }
+    
+}
+
+
+
+// with iterator and insert = to add at random place in last
+
+#include <iostream>
+using namespace std;
+#include <vector>
+#include <iterator>
+int main() {
+    
+    vector<int>vec;
+    int n,a;
+    cout<<"Enter The Size of Vetor = ";
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        cout<<"Enter digit = ";
+        cin>>a;
+        vec.push_back(a);
+    }
+    cout<<"\n data of vector \n";
+    
+    for(auto p:vec){
+        cout<<p<<"\t";
+    }
+    
+    cout<<"\n with iterator \n";
+    
+    vector<int>::iterator it=vec.end();
+    vec.insert(it-1,100);
+    cout<<"\n after iteration \n";
+    for(auto j:vec){
+        cout<<j<<"\t";
+    }
+    
+   
+    
+
+}
