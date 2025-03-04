@@ -2958,6 +2958,7 @@ int main() {
         cin>>a;
         vec.push_back(a);
     }
+    
     cout<<"\n data of vector \n";
     
     for(auto p:vec){
@@ -3071,8 +3072,87 @@ int main() {
     for(auto j:vec){
         cout<<j<<"\t";
     }
-    
-   
-    
 
+
+}
+
+
+// PAIR
+
+#include <iostream>
+using namespace std;
+#include <vector>
+int main() {
+    
+pair<int,string>p;
+p=make_pair(101,"jatin");
+cout<<p.first<<"\n";
+cout<<p.second;
+
+}
+
+
+
+// vector with pair
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+#include <vector>
+int main() {
+    
+vector<pair<int,string>>v;
+int roll,n;
+string name;
+cout<<"Enter Number of Records = ";
+cin>>n;
+for(int i=1; i<=n;i++){
+    cout<<"Enter roll number = ";
+    cin>>roll;
+    cout<<"Enter Name = ";
+    cin>>name;
+    // v.push_back(make_pair(roll,name));        //  or     
+     v.push_back({roll,name});                 // prefer this method as both works
+}
+
+cout<<"Results are \n";
+for(int i=0; i<v.size();i++){
+    cout<<v[i].first<<":"<<v[i].second<<"\n";
+}
+
+}
+
+
+
+// nested vestor  = imp
+
+#include <iostream>
+using namespace std;
+#include<vector>
+
+int main() {
+    vector<vector<int>>v1;
+    int row,col;
+    int val;
+    cout<<"Enter Size of Row =";
+    cin>>row;
+    cout<<"Enter Size of Col =";
+    cin>>col;
+    for(int i=0;i<row;i++){
+        vector<int>v2;
+        for(int j=0;j<col;j++){
+            cout<<"Enter value = ";
+            cin>>val;
+            v2.push_back(val);
+        }
+        v1.push_back(v2);
+    }
+    cout<<" Stored Values In 2-d Formate : \n";
+    for(int i=0;i<v1.size();i++){
+        for(int j=0; j<v1[i].size();j++){
+            cout<<v1[i][j]<<"\t";
+        }
+        cout<<"\n";
+    }
+    
 }
