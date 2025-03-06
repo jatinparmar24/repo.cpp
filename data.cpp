@@ -3177,6 +3177,30 @@ int main() {
 // ans = 10 , 3 , 5 , 9
 
 
+// sum of two vector with third varaible = 
+
+#include <iostream>
+using namespace std;
+#include <vector>
+
+int main() {
+    vector<int>v1{3,1,2,5};
+    vector<int>v2{7,2,3,4};
+    vector<int>v3;
+    for(int i=0;i<v1.size();i++){
+        int store;
+        store=v1[i]+v2[i];
+        v3.push_back(store);
+    }
+    for(auto a:v3){
+        cout<<a<<"\t";
+        }
+
+}
+
+// ans = 10 , 3 , 5 , 9
+
+
 // add two vector with one variable =
 
 
@@ -3220,3 +3244,133 @@ int main() {
 }
 
 // ans = 27 
+
+
+// wpr to find biggest aaray = 
+
+
+#include <iostream>
+using namespace std;
+#include <vector>
+
+int main() {
+    
+    int sum1=0;
+    int sum2=0;
+    vector<int>v1{3,1,2,5};
+    vector<int>v2{7,2,3,4};
+    for(int i=0;i<v1.size();i++){
+        sum1=v1[i]+sum1;
+        sum2=v2[i]+sum2;
+        
+       
+    }
+     if(sum1>sum2)
+        {
+            cout<<" Vector 1 is bigger = "<<sum1;
+        }
+        else{
+            cout<<"Vector 2 is bigger = "<<sum2;
+        }
+
+}
+
+// ans = Vector 2 is bigger = 16
+
+// wpr to add two vector of different size = 
+
+#include <iostream>
+using namespace std;
+#include <vector>
+
+int main() {
+    vector<int>v1{3,1,2,5};
+    vector<int>v2{7,2,3};
+    vector<int>v3;
+    for(int i=0;i<v1.size();i++){
+        int store;
+        store=v1[i]+v2[i];
+        v3.push_back(store);
+    }
+    for(auto a:v3){
+        cout<<a<<"\t";
+        }
+
+}
+
+
+// not right
+
+or
+
+#include <iostream>
+using namespace std;
+#include <vector>
+
+int main() {
+    vector<int>v1{3,1,2,07,1,15};
+    vector<int>v2{7,2,5,4,13,11,154};
+    int s1=v1.size();
+    int s2=v2.size();
+    cout<<s1<<"\n";
+    cout<<s2<<"\n";
+    int min=max(s1,s2);
+    cout<<min<<"\n";
+    vector<int>v3;
+    for(int i=0;i<min;i++){
+        int store;
+        store=v1[i]+v2[i];
+        v3.push_back(store);
+    }
+    for(auto a:v3){
+        cout<<a<<"\t";
+        }
+
+}
+
+// need to correct
+
+// ans = 10 , 3 , 5, 5
+
+
+
+// wpr to remove duplicate value and print in ascending order = 
+
+// wpr to find second minimum value = 
+
+
+
+
+
+//   =================  Lambda Expression ================
+//  a function that does not have any name
+// to pass function as parameter to other function . 
+
+#include <iostream>
+using namespace std;
+#include <vector>
+#include<algorithm>
+//bool cybrom(int a , int b){
+//    return a>b;
+//}
+
+int main() {
+    
+    // in built function alwaays return boolvalue = all_of() ; none_of() ; any_of();
+    vector<int>v{3,2,5,4,6,7};
+    sort(v.begin(),v.end());
+    for(auto p:v){
+        cout<<p<<"\t";
+    }
+   // cout<<[](int a , int b ) {return a>b;} (4,7);
+   
+    cout<<"\n";
+    sort(v.begin(),v.end(),less<int>());
+    sort(v.begin(),v.end(),greater<int>());
+    sort(v.begin(),v.end() ,[] (int a , int b ){return a>b;});
+    for(auto p:v){
+        cout<<p<<"\t";
+    }
+
+}
+
