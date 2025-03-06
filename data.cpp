@@ -3286,55 +3286,49 @@ using namespace std;
 int main() {
     vector<int>v1{3,1,2,5};
     vector<int>v2{7,2,3};
-    vector<int>v3;
-    for(int i=0;i<v1.size();i++){
-        int store;
-        store=v1[i]+v2[i];
-        v3.push_back(store);
+    int x=0;
+    int y=0;
+    for(int i=0; i<v1.size();i++)
+    {
+       x=x*10+v1[i];
     }
-    for(auto a:v3){
-        cout<<a<<"\t";
-        }
 
+    for(int j=0; j<v2.size();j++)
+    {
+       y=y*10+v2[j];
+    }
+
+    cout<<"result = "<<x+y;
 }
 
+// ans =  3 , 8 ,4 ,8
+// ans = comes in parallel direction = like / / /
 
-// not right
 
-or
+// wpr to remove duplicate value and print in ascending order = 
 
 #include <iostream>
 using namespace std;
 #include <vector>
+#include <algorithm>
 
 int main() {
-    vector<int>v1{3,1,2,07,1,15};
-    vector<int>v2{7,2,5,4,13,11,154};
-    int s1=v1.size();
-    int s2=v2.size();
-    cout<<s1<<"\n";
-    cout<<s2<<"\n";
-    int min=max(s1,s2);
-    cout<<min<<"\n";
-    vector<int>v3;
-    for(int i=0;i<min;i++){
-        int store;
-        store=v1[i]+v2[i];
-        v3.push_back(store);
-    }
-    for(auto a:v3){
-        cout<<a<<"\t";
+    vector<int>v{3,2,1,5,4,1,9,6,5};
+    sort(v.begin(),v.end());
+    int x=1;
+    for(int a=1;a<v.size();a++)
+    {
+        if(v[x-1]!=v[a]){
+            v[x]=v[a];
+            x++;
         }
+    }
+    for(int i=0;i<x;i++)
+    {
+        cout<<v[i]<<"\t";
+    }
 
 }
-
-// need to correct
-
-// ans = 10 , 3 , 5, 5
-
-
-
-// wpr to remove duplicate value and print in ascending order = 
 
 // wpr to find second minimum value = 
 
@@ -3374,3 +3368,38 @@ int main() {
 
 }
 
+
+
+
+// STACK ====================================================================================================================
+
+#include <iostream>
+using namespace std;
+#include <vector>
+#include <stack>
+
+int main() {
+ stack<int>st;
+ st.push(10);
+  st.push(130);
+   st.push(32);
+    st.push(1);
+     st.push(20);
+     
+     cout<<st.top()<<"\t";
+    // cout<<"\t";
+     while(!st.empty())
+     {
+         cout<<st.top()<<"\n";
+         st.pop();
+     }
+
+}
+
+// ans = 
+
+// 20	20
+// 1
+// 32
+// 130
+// 10
