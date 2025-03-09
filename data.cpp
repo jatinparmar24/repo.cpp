@@ -3371,7 +3371,9 @@ int main() {
 
 
 
-// STACK ====================================================================================================================
+// STACK ==================================================================================================
+// stack is used for compiler based coding
+
 
 #include <iostream>
 using namespace std;
@@ -3403,3 +3405,72 @@ int main() {
 // 32
 // 130
 // 10
+
+
+
+#include <iostream>
+using namespace std;
+#include<stack>
+bool valid(string s)
+{
+    stack<char>st;
+    bool r=true;
+    for(int i=0;i<s.size();i++)
+    {
+        // replace and operator with or operator
+      if(s[i]=='[' && s[i]=='{' && s[i]=='(')
+      {
+          st.push(s[i]);
+      }
+      else if(s[i]==']')
+      {
+          if(!st.empty() && st.top()=='[')
+          {
+              st.pop();
+          }
+          else{
+              return false;
+              break;
+          }
+      }
+       else if(s[i]=='}')
+      {
+          if(!st.empty() && st.top()=='{')
+          {
+              st.pop();
+          }
+          else{
+              return false;
+              break;
+          }
+      }
+       else if(s[i]==')')
+      {
+          if(!st.empty() && st.top()=='(')
+          {
+              st.pop();
+          }
+          else{
+              return false;
+              break;
+          }
+      }
+    }
+    if(!st.empty()){
+        return false;
+    }
+    else{
+        return r;
+    }
+    
+}
+int main() {
+    string s="([)";
+    if(valid(s)){
+        cout<<"valid";
+    }
+    else{
+        cout<<"invalid";
+    }
+
+}
