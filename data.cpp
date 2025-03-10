@@ -3408,6 +3408,8 @@ int main() {
 
 
 
+// valid parenthieses with stack template
+
 #include <iostream>
 using namespace std;
 #include<stack>
@@ -3418,7 +3420,7 @@ bool valid(string s)
     for(int i=0;i<s.size();i++)
     {
         // replace and operator with or operator
-      if(s[i]=='[' && s[i]=='{' && s[i]=='(')
+      if(s[i]=='[' || s[i]=='{' || s[i]=='(')
       {
           st.push(s[i]);
       }
