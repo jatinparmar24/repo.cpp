@@ -3482,7 +3482,7 @@ int main() {
 
 
 
-// checking stack empty or not and counting 
+// hard coding of stack
 
 #include <iostream>
 using namespace std;
@@ -3543,3 +3543,102 @@ int main()
     st.pops();
     cout<<"top value = "<<st.tops()<<"\n";
 }
+
+
+
+
+
+
+//in STL= 
+
+// imp =   Forward List (singly link list)  =  used in directed graph  =  insertion and deletion at the end 
+
+#include <iostream>
+using namespace std;
+#include <forward_list>
+
+int main() {
+forward_list<int>f;
+f.push_front(77);
+f.push_front(10);
+f.push_front(2);
+f.push_front(7);
+f.push_front(3);
+f.push_front(7);
+f.push_front(7);
+f.sort();    // arrange in ascendind order ; 
+f.unique();  // remove duplicate but if only present in ascending order so first sort the method then unique method ; 
+for(auto p:f){
+    cout<<p<<"\n";
+}
+f.pop_front();  // delete from  last or at end ; 
+cout<<"after pop method = "<<"\n";
+for(auto p:f){
+    cout<<p<<"\t";
+}
+
+cout<<"\n lenth="<<distance(f.begin(),f.end());
+cout<<"\n";
+f.reverse();
+cout<<"\n after reverse\n";
+for(auto p:f){
+    cout<<p<<"\t";
+}
+
+cout<<"\n";
+
+cout<<"\n merge\n";
+forward_list<int>f1{13,16,15,14,12};
+forward_list<int>f2{21,19,18,20,17};
+
+cout<<"\n f1 data\n";
+for(auto a:f1){
+    cout<<a<<"\t";
+}
+
+cout<<"\n f2 data\n";
+
+f1.sort();
+f2.sort();
+for(auto b:f2){
+    cout<<b<<"\t";
+}
+
+cout<<"\n after merge method \n";    // before merge we have to sort both data its compulsory = 
+
+f1.merge(f2);
+for(auto c:f1){
+    cout<<c<<"\t";
+}
+
+
+}
+
+// output = 
+2
+3
+7
+10
+77
+after pop method = 
+3	7	10	77	
+ lenth=4
+
+ after reverse
+77	10	7	3	
+
+ merge
+
+ f1 data
+13	16	15	14	12	
+ f2 data
+17	18	19	20	21	
+ after merge method 
+12	13	14	15	16	17	18	19	20	21	
+
+
+
+
+
+
+// imp =   List (doubly link list)   =   used in undirected graph =  insertion and deletion from front
