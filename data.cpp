@@ -3671,3 +3671,81 @@ int main() {
 40	5	10	50	
  after deletion
 10	50
+
+
+
+
+
+// doubly link list insertion,deletion,update,find
+
+#include <iostream>
+using namespace std;
+#include <list>
+#include <algorithm>
+int main() {
+    list<int>l1;
+    l1.push_front(10);
+    l1.push_front(5);
+    l1.push_front(40);
+    l1.push_back(50);
+    
+    for(auto p:l1){
+        cout<<p<<"\t";
+    }
+    
+   // l1.pop_front();
+   // l1.pop_front();
+    cout<<"\n after deletion\n";
+     for(auto p:l1){
+        cout<<p<<"\t";
+    }
+    
+    auto t = l1.begin();
+    advance(t,2);
+    l1.insert(t,1000);
+    cout<<"\n after insertion\n";
+     for(auto p:l1){
+        cout<<p<<"\t";
+    }
+    
+    auto t1=l1.begin();
+    advance(t1,3);
+    l1.erase(t1);
+    cout<<"\n after remove\n";
+     for(auto p:l1){
+        cout<<p<<"\t";
+    }
+    
+    auto t2=l1.begin();   // auto t2 is a pointer
+    advance(t2,1);
+    *t2=900;
+    cout<<"\n after update\n";
+    for(auto p:l1){
+        cout<<p<<"\t";
+    }
+    cout<<"\n";
+    auto g = find(l1.begin(),l1.end(),900);  // find is a template of algorithm
+    if(g!=l1.end())
+    {
+        cout<<"found="<<*g;
+        
+    }
+    
+    else{
+        cout<<"Not Found";
+    }
+    
+ 
+}
+
+// output = 
+40	5	10	50	
+ after deletion
+40	5	10	50	
+ after insertion
+40	5	1000	10	50	
+ after remove
+40	5	1000	50	
+ after update
+40	900	1000	50	
+found=900
