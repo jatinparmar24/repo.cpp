@@ -3641,4 +3641,33 @@ after pop method =
 
 
 
-// imp =   List (doubly link list)   =   used in undirected graph =  insertion and deletion from front
+// imp =   List (doubly link list)   =   used in undirected graph 
+// insertion and deletion from both side
+
+#include <iostream>
+using namespace std;
+#include <list>
+int main() {
+    list<int>l1;
+    l1.push_front(10);
+    l1.push_front(5);
+    l1.push_front(40);
+    l1.push_back(50);
+    
+    for(auto p:l1){
+        cout<<p<<"\t";
+    }
+    
+    l1.pop_front();
+    l1.pop_front();
+    cout<<"\n after deletion\n";
+     for(auto p:l1){
+        cout<<p<<"\t";
+    }
+ 
+}
+
+// output = 
+40	5	10	50	
+ after deletion
+10	50
