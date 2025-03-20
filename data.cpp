@@ -3749,3 +3749,74 @@ int main() {
  after update
 40	900	1000	50	
 found=900
+
+
+
+
+
+// MAP Method =>  works on key value and it is a associate container,can be used in tree,key is always unique
+
+// 1 = ORDER   => Unique key , data in ascending order , self balancing binary search tree(RED BLACK TREE) , value can be duplicate but key must be unique
+// 2 = UNORDER => Unique key , unsorted order , HASHING TECHNIQUE , value can be duplicate but key must be unique
+// 3 = MULTIMAP =. store duplicate value , sorted data , value can be duplicate but key must be unique
+
+#include<iostream>
+#include<map>
+using namespace std;
+int main()
+{
+  map<int,string>mp{{11,"jatin"},{13,"himanshu"},{12,"vijay"}};
+  for(auto p:mp){
+    cout<<p.first<<":"<<p.second<<"\n";
+  } 
+  
+  cout<<"\n";
+
+  // for string
+  map<string,int>mps{{"vijay",20},{"himanshu",12},{"jatin",15}};
+ for (auto i=mps.begin();i!=mps.end();i++){
+    cout<<i->first<<":"<<i->second<<"\n";
+ }
+}
+
+// output = arrange data in ascending order
+11:jatin
+12:vijay
+13:himanshu
+
+himanshu:12
+jatin:15
+vijay:20
+
+
+
+
+// map with insert method
+
+#include<iostream>
+#include<map>
+using namespace std;
+int main()
+{
+    map<int,string>mp;
+    mp.insert({100,"jatin"});
+    mp.insert({20,"abhi"});
+    mp.insert({1,"raj"});
+    mp.insert({100,"jatin"});
+    //mp[109]="joy";
+    mp[109]=18
+    mp[55];           // output = 55:0
+    mp[55]++;          // increase the respective value 
+    for(auto p:mp){
+        cout<<p.first<<":"<<p.second<<"\n";
+    }
+}
+
+// output = 
+1:raj
+20:abhi
+//55:                // takes default value 0
+56
+100:jatin
+//109:joy
+109:18
