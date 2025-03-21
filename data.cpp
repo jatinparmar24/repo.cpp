@@ -3820,3 +3820,60 @@ int main()
 100:jatin
 //109:joy
 109:18
+
+
+
+
+// map with runtime input
+#include<iostream>
+#include<map>
+using namespace std;
+int main()
+{
+    map<int,string>mp;
+    int roll,n;
+    string name;
+    cout<<"\n Enter How Many Records \n";
+    cin>>n;
+    for(int i=1;i<=n;i++)
+    {
+        cout<<"Enter Roll No \n";
+        cin>>roll;
+        cout<<"Enter name \n";
+        cin>>name;
+        mp.insert({roll,name});
+    }
+
+    cout<<"\n record Are \n";
+    for(auto p:mp)
+    {
+        cout<<p.first<<":"<<p.second<<"\n";
+    }
+    
+    cout<<"\n find record \n";
+    
+    auto t=mp.find(102);   // use to find records = 
+    if (t!=mp.end())
+    {
+       cout<<t->first<<":"<<t->second; 
+    }
+    else{
+        cout<<"not found";
+    }
+    
+    cout<<"\n for data erase \n";
+    mp.erase(103);    // erase the data if existed and if not existed doesn't provide any output
+    for(auto p:mp)
+    {
+        cout<<p.first<<":"<<p.second<<"\n";
+    }
+    
+
+}
+
+
+
+
+
+// output at runtime
+
