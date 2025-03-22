@@ -3893,7 +3893,7 @@ int main()
 
 //drawback=cannot use complex data types unordered map doesn't support complex data type beacuse it doesn't have it's own hashing function
 
-
+time complexcity = order of 1 == O(1)
 
 
 ///////////////////////////UNORDERED_MAP//////////////////////////////
