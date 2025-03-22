@@ -3825,6 +3825,7 @@ int main()
 
 
 // map with runtime input
+
 #include<iostream>
 #include<map>
 using namespace std;
@@ -3872,8 +3873,55 @@ int main()
 }
 
 
-
-
-
 // output at runtime
 
+
+
+
+
+
+
+//hash function is made for primitive data type = like<int,string>
+// not like
+//map<pair<<int,int>,string>    == complex data type
+
+// unordered map =   only it doesn't sort the data  = it follows hashing technique
+
+
+// time complexcity is much better then map 
+// o(1) insert in constant time
+
+//drawback=cannot use complex data types unordered map doesn't support complex data type beacuse it doesn't have it's own hashing function
+
+
+
+
+///////////////////////////UNORDERED_MAP//////////////////////////////
+
+
+#include<iostream>
+#include<unordered_map>
+using namespace std;
+int main()
+{
+   unordered_map<int,string>up;
+    up.insert({100,"jatin"});
+    up.insert({20,"abhi"});
+    up.insert({1,"raj"});
+    up.insert({100,"jatin"});
+    //up[109]="joy";
+    up[109]=18;
+    up[55];           // output = 55:0
+   // up[55]++;          // increase the respective value 
+    for(auto p:up){
+        cout<<p.first<<":"<<p.second<<"\n";
+    }
+}
+
+// output = 
+
+55:
+109:
+1:raj
+20:abhi
+100:jatin
