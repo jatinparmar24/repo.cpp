@@ -2739,7 +2739,7 @@ cout<<obj.show();
 
 
 
-// without constructure
+// without constructor
 #include <iostream>
 using namespace std;
 template<typename x1 , typename x2>
@@ -2898,7 +2898,7 @@ int m = arr[arr.size()-1];
 
 
 
-// multiple vector with static value and auot function
+// multiple vector with static value and auto function
 
 
 #include <iostream>
@@ -2999,7 +2999,6 @@ int main() {
         cout<<p<<"\t";
     }
     
-
 }
 
 
@@ -3350,7 +3349,7 @@ using namespace std;
 
 int main() {
     
-    // in built function alwaays return boolvalue = all_of() ; none_of() ; any_of();
+    // in built function always return boolvalue = all_of() ; none_of() ; any_of();
     vector<int>v{3,2,5,4,6,7};
     sort(v.begin(),v.end());
     for(auto p:v){
@@ -3566,7 +3565,7 @@ f.push_front(7);
 f.push_front(3);
 f.push_front(7);
 f.push_front(7);
-f.sort();    // arrange in ascendind order ; 
+f.sort();    // arrange in ascending order ; 
 f.unique();  // remove duplicate but if only present in ascending order so first sort the method then unique method ; 
 for(auto p:f){
     cout<<p<<"\n";
@@ -3804,7 +3803,7 @@ int main()
     mp.insert({1,"raj"});
     mp.insert({100,"jatin"});
     //mp[109]="joy";
-    mp[109]=18
+    mp[109]=18;
     mp[55];           // output = 55:0
     mp[55]++;          // increase the respective value 
     for(auto p:mp){
@@ -3925,6 +3924,174 @@ int main()
 1:raj
 20:abhi
 100:jatin
+//dosn't allow dupliacte
 
 
+
+
+
+/////////////////////////////    MULTIMAP //////////////////
+//it allow duplicate keys
+
+
+#include<iostream>
+#include<map>
+using namespace std;
+int main()
+{
+   multimap<int,string>up;
+    up.insert({100,"jatin"});
+    up.insert({20,"abhi"});
+    up.insert({1,"raj"});
+    up.insert({100,"jatin"});
+
+    for(auto p:up){
+        cout<<p.first<<":"<<p.second<<"\n";
+    }
+}
+
+// output
+
+//allow dupliacte
+1:raj
+20:abhi
+100:jatin
+100:jatin
+
+
+
+
+// delete in multimap
+if delete through iterator it delete only first data 
+if delete through value it delete all present data of given number
+
+
+#include<iostream>
+#include<map>
+using namespace std;
+int main()
+{
+   multimap<int,string>up;
+    up.insert({100,"jatin"});
+    up.insert({20,"abhi"});
+    up.insert({1,"raj"});
+    up.insert({100,"jatin"});
+
+    for(auto p:up){
+        cout<<p.first<<":"<<p.second<<"\n";
+    }
+
+    cout<<"\n after deleltion with iterator\n";
+
+    auto t=up.find(100);
+    if(t!=up.end()){
+        up.erase(t);
+    }
+    else{
+        cout<<"not found";
+    }
+
+    for(auto p:up){
+        cout<<p.first<<":"<<p.second<<"\n";
+    }
+
+    cout<<"\n after deleltion with value\n";
+    up.erase(100);
+
+    for(auto p:up){
+        cout<<p.first<<":"<<p.second<<"\n";
+    }
+
+}
+
+// output =
+1:raj
+20:abhi
+100:jatin
+100:jatin
+
+ after deleltion with iterator
+1:raj
+20:abhi
+100:jatin
+
+ after deleltion with value
+1:raj
+20:abhi
+
+
+
+
+
+// =========================       SET       ===========================    ====   it is use in graph ====
+
+// it is not a associate container because we don't use key and value
+
+1 = orderset = only one key  =  order data , unique key , RED BLACK TREE  
+
+2 = onorderset = not sorted , hashing technique , time complexcity = in insertion = order of 1
+
+3 = multiset = sorted , allow duplicate
+
+
+
+1  =   orderset
+
+// we can give duplicate value but it only count one time and not give error
+
+
+#include<iostream>
+using namespace std;
+#include<set>
+int main()
+{
+    set<int>s{2,4,6,1,90,7};
+    for(auto p:s)
+    {
+        cout<<p<<"\t";
+    }
+    
+    s.insert(9);
+    s.insert(3);
+    
+    cout<<"\n after add \n";
+     for(auto p:s)
+    {
+        cout<<p<<"\t";
+    }
+    
+    cout<<"\n remove \n";
+    s.erase(90);
+     for(auto p:s)
+    {
+        cout<<p<<"\t";
+    }
+    
+    cout<<"\n find method \n";
+    auto t = s.find(2);   // it return value with iterator so we hacve to add pointer
+    
+    if(t!=s.end())
+    {
+        cout<<"found = "<<*t;
+    }
+    
+    else{
+        cout<<"not found";
+    }
+    
+    
+    
+    
+    
+    
+}
+
+// output = 
+1	2	4	6	7	90	
+ after add 
+1	2	3	4	6	7	9	90	
+ remove 
+1	2	3	4	6	7	9	
+ find method 
+found = 2
 
