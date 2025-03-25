@@ -4079,11 +4079,6 @@ int main()
         cout<<"not found";
     }
     
-    
-    
-    
-    
-    
 }
 
 // output = 
@@ -4095,3 +4090,130 @@ int main()
  find method 
 found = 2
 
+
+
+2 = unordered_set
+
+
+
+#include<iostream>
+using namespace std;
+#include<unordered_set>
+int main()
+{
+    unordered_set<int>s{2,4,6,1,90,7};
+    for(auto p:s)
+    {
+        cout<<p<<"\t";
+    }
+    
+    s.insert(9);
+    s.insert(3);
+    
+    cout<<"\n after add \n";
+     for(auto p:s)
+    {
+        cout<<p<<"\t";
+    }
+    
+    cout<<"\n remove \n";
+    s.erase(90);
+     for(auto p:s)
+    {
+        cout<<p<<"\t";
+    }
+    
+    cout<<"\n find method \n";
+    auto t = s.find(2);   // it return value with iterator so we hacve to add pointer
+    
+    if(t!=s.end())
+    {
+        cout<<"found = "<<*t;
+    }
+    
+    else{
+        cout<<"not found";
+    }
+    
+}
+
+
+// data arrange in random position
+// output = 
+7	90	1	6	4	2	
+ after add 
+3	9	7	90	1	6	4	2	
+ remove 
+3	9	7	1	6	4	2	
+ find method 
+found = 2
+
+
+3 = multiset
+
+// allow dupliacte 
+
+
+#include<iostream>
+using namespace std;
+#include<set>
+int main()
+{
+    multiset<int>s{2,4,6,1,90,7,3,2,1,6};
+    for(auto p:s)
+    {
+        cout<<p<<"\t";
+    }
+    
+    s.insert(9);
+    s.insert(3);
+    
+    cout<<"\n after add \n";
+     for(auto p:s)
+    {
+        cout<<p<<"\t";
+    }
+    
+    cout<<"\n remove value based means all if present \n";
+    s.erase(1);
+     for(auto p:s)
+    {
+        cout<<p<<"\t";
+    }
+    
+    cout<<"\n erase pointer based = delete first if found\n";
+    
+    auto a=s.find(2);
+    if(a!=s.end())
+    {
+        s.erase(a);
+    }
+      for(auto a:s)
+    {
+        cout<<a<<"\t";
+    }
+    
+    cout<<"\n find method \n";
+    auto t = s.find(2);   // it return value with iterator so we hacve to add pointer
+    
+    if(t!=s.end())
+    {
+        cout<<"found = "<<*t;
+    }
+    
+    else{
+        cout<<"not found";
+    }
+       
+}
+
+// output = 
+1	1	2	2	3	4	6	6	7	90	
+ after add 
+1	1	2	2	3	3	4	6	6	7	9	90	
+ remove value based means all if present 
+2	2	3	3	4	6	6	7	9	90	
+ erase pointer based = delete first if found
+2	3	3	4	6	6	7	9	90	
+ find method 
+found = 2
