@@ -4217,3 +4217,198 @@ int main()
 2	3	3	4	6	6	7	9	90	
  find method 
 found = 2
+
+
+
+
+
+
+
+
+
+
+// question for practice = 
+ wpr to find out that the given string is panagram or not 
+ // panagram = a string that contain all 26 letter 
+
+ #include<iostream>
+ using namespace std;
+ int panagram(string &s)
+ {
+
+
+    
+ }
+
+ int main(){
+    string s = "The quick brown fox jumps over the lazy dog";
+    if(panagram(s))
+    {
+        cout<<"It Is Panagram String";
+    }
+
+    else{
+        cout<<"It Is Not Panagram String";
+    }
+ }
+
+
+
+ 
+
+ #include<iostream>
+ using namespace std;
+ #include<map>
+ bool panagram(string &s)
+ {
+
+    map<char,bool>alpha;
+//   for (char ch : s)
+ for (int i = 0 ; i<s.length(); i++)
+  {
+    char ch =s[i];
+    if (isalpha(ch))
+    {
+        alpha[tolower(ch)]=true;
+    }
+  }
+  return (alpha.size()==26);
+ }
+
+ int main(){
+    string s = "The quick brown fox jumps over the lazy dog";
+    if(panagram(s))
+    {
+        cout<<"It Is Panagram String";
+    }
+
+    else{
+        cout<<"It Is Not Panagram String";
+    }
+ }
+
+
+
+ //   or
+
+ #include<iostream>
+ using namespace std;
+ #include<map>
+ bool panagram(string &s)
+ {
+
+    map<char,bool>alpha;
+//   for (char ch : s)
+ for (int i = 0 ; i<s.length(); i++)
+  {
+    char ch =s[i];
+   if (ch >='A' && ch<= 'Z')
+   {
+    ch = ch + ('a'-'A');
+   }
+
+   if (ch >='a' && ch<='z')
+   {
+    alpha[ch]=true;
+   }
+  }
+  return (alpha.size()==26);
+ }
+
+ int main(){
+    string s = "The quick brown fox jumps over the lazy dog";
+    if(panagram(s))
+    {
+        cout<<"It Is Panagram String";
+    }
+
+    else{
+        cout<<"It Is Not Panagram String";
+    }
+ }
+
+
+//  with logic
+
+ #include<iostream>
+ using namespace std;
+ #include<set>
+
+ int main(){
+    string s = "the quick brown fox jumps over the lazy dog";
+    set<char>v;
+    for(int i = 0 ; i<s.length(); i++)
+    {
+        v.insert(s[i]);
+    }
+
+    int a=v.size()-1;
+
+    if (a==26)
+    {
+        cout<<"panagram";
+    }
+
+    else{
+        cout<<"not";
+    }
+ }
+
+
+
+
+//if we make that node with structure then it is called SELF REFRENCE STRUCTURE (with struct keyward)
+
+//  SELF REFRENCE CLASS ==================
+
+#include <iostream>
+using namespace std;
+class node {
+public:int data;
+node *left;
+node *right;
+
+
+// parameterised constructure
+node (int d)
+{
+    data=d;
+    left=NULL;
+    right=NULL;
+}
+};
+
+int main()
+{
+
+node *root=new node(10);
+root->left=new node(20);
+root->right=new node(30);
+
+cout<<"preorder\n";
+cout<<root->data<<"\t";
+cout<<root->left->data<<"\t";
+cout<<root->right->data<<"\n";
+
+cout<<"\n inorder\n";
+cout<<root->left->data<<"\t";
+cout<<root->data<<"\t";
+cout<<root->right->data<<"\n";
+
+cout<<"\n postorder\n";
+cout<<root->left->data<<"\t";
+cout<<root->right->data<<"\t";
+cout<<root->data;
+
+}
+
+// output
+
+preorder
+10	20	30
+
+ inorder
+20	10	30
+
+ postorder
+20	30	10
