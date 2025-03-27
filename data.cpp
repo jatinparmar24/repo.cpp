@@ -4381,6 +4381,7 @@ node (int d)
 int main()
 {
 
+    // static entries 
 node *root=new node(10);
 root->left=new node(20);
 root->right=new node(30);
@@ -4412,3 +4413,83 @@ preorder
 
  postorder
 20	30	10
+
+
+
+
+
+//preorder , inorder , postorder with recurrsion and with static data = in binary tree
+
+#include<iostream>
+using namespace std;
+class node{
+    public:node  *l , *r;
+    int d;
+    public:node(int data)
+    {
+        d=data;
+        l=NULL;
+        r=NULL;
+    }
+};
+
+void preorder(node *r)
+{
+    if(r==NULL)
+    {
+        return;
+    }
+ 
+    cout<<r->d;
+    preorder(r->l);
+    preorder(r->r);
+}
+
+void inorder(node *r)
+{
+    if(r==NULL)
+    {
+        return;
+    }
+
+    inorder(r->l);
+    cout<<r->d;
+    inorder(r->r);
+}
+
+void postorder(node *r)
+{
+    if(r==NULL)
+    {
+        return;
+    }
+
+    postorder(r->l);
+    postorder(r->r);
+    cout<<r->d;
+}
+
+int main()
+{
+    node *root=new node(10);
+    root->l=new node(20);
+    root->r=new node(30);
+    cout<<"\n preorder\n";
+    preorder(root);
+    cout<<"\n inorder\n";
+    inorder(root);
+    cout<<"\n postorder\n";
+    postorder(root);
+    
+}
+
+
+
+//output
+
+preorder
+102030
+ inorder
+201030
+ postorder
+203010
