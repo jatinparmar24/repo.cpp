@@ -1378,19 +1378,19 @@ for(int j=0; j<5; ++j)
 
 missing number
 
-#include <iostream>
-using namespace std;                                          
-int main()
-{
-    int arr[]={1,2,3,5,7};
-for(int i=0; i<5; ++i)
-{
-    if(arr[i+1]-arr[i]>1)
-    {
-        cout<<arr[i]+1;
-    }
-}
-}
+// #include <iostream>
+// using namespace std;                                          
+// int main()
+// {
+//     int arr[]={1,2,3,5,7};
+// for(int i=0; i<5; ++i)
+// {
+//     if(arr[i+1]-arr[i]>1)
+//     {
+//         cout<<arr[i]+1;
+//     }
+// }
+// }
 
 multiple missing number
 
@@ -1791,7 +1791,8 @@ int main() {
                   found = false;
             if(str1[i]==str2[j])
             {
-                str2[j]='#';         if same alpha comes then it makes it # to remember
+                str2[j]='#';         if same alpha comes then it make
+                s it # to remember
                 found = true;
                 break;
             }
@@ -3981,7 +3982,7 @@ int main()
         cout<<p.first<<":"<<p.second<<"\n";
     }
 
-    cout<<"\n after deleltion with iterator\n";
+    cout<<"\n after deletion with iterator\n";
 
     auto t=up.find(100);
     if(t!=up.end()){
@@ -4068,7 +4069,7 @@ int main()
     }
     
     cout<<"\n find method \n";
-    auto t = s.find(2);   // it return value with iterator so we hacve to add pointer
+    auto t = s.find(2);   // it return value with iterator so we have to add pointer
     
     if(t!=s.end())
     {
@@ -4124,7 +4125,7 @@ int main()
     }
     
     cout<<"\n find method \n";
-    auto t = s.find(2);   // it return value with iterator so we hacve to add pointer
+    auto t = s.find(2);   // it return value with iterator so we have to add pointer
     
     if(t!=s.end())
     {
@@ -4231,30 +4232,8 @@ found = 2
  wpr to find out that the given string is panagram or not 
  // panagram = a string that contain all 26 letter 
 
- #include<iostream>
- using namespace std;
- int panagram(string &s)
- {
 
 
-    
- }
-
- int main(){
-    string s = "The quick brown fox jumps over the lazy dog";
-    if(panagram(s))
-    {
-        cout<<"It Is Panagram String";
-    }
-
-    else{
-        cout<<"It Is Not Panagram String";
-    }
- }
-
-
-
- 
 
  #include<iostream>
  using namespace std;
@@ -4493,3 +4472,87 @@ preorder
 201030
  postorder
 203010
+
+
+
+//dynamic entry of data  with order
+
+#include<iostream>
+using namespace std;
+class node{
+public:int data;
+node *left;
+node *right;
+node(int val)
+{
+    data=val;
+    left=NULL;
+    right=NULL;
+}
+};
+
+node *create(node *root)
+{
+int d;
+cout<<"Enter Value =\n ";
+cin>>d;
+root=new node(d);
+if(d==-1)
+{
+return NULL;
+}
+
+cout<<"enter value for left = "<<d<<"\n";
+root->left=create(root->left);
+cout<<"enter value for right ="<<d<<"\n";
+root->right=create(root->right);
+return root;
+}
+
+void preorder(node *n)
+{
+    if(n==NULL)
+    {
+        return;
+    }
+    cout<<n->data<<"\t";
+    preorder(n->left);
+    preorder(n->right);
+}
+
+void inorder(node *n)
+{
+    if(n==NULL)
+    {
+        return;
+    }
+
+    inorder(n->left);
+    cout<<n->data<<"\t"; 
+    inorder(n->right);
+}
+
+void postorder(node *n)
+{
+    if(n==NULL)
+    {
+        return;
+    }
+
+    postorder(n->left);
+    postorder(n->right);
+    cout<<n->data<<"\t"; 
+}
+
+int main(){
+node *root=NULL;
+root=create(root);
+cout<<"\n preorder\n";
+preorder(root);
+cout<<"\n inorder\n";
+inorder(root);
+cout<<"\n postorder\n";
+postorder(root);
+}
+
+//incomplete
