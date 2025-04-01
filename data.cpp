@@ -1246,6 +1246,30 @@ int main() {
 cout<<max;
 }
 
+
+greater value at runtime
+
+#include<iostream>
+using namespace std;
+int main(){
+    int val;
+    int num;
+    int max=0;
+    cout<<"Enter Size of Array :-";
+    cin>>val;
+
+    for(int i=0;i<val;i++)
+    {
+        cout<<"Enter Number = ";
+        cin>>num;
+
+        if(num>max){
+            max=num;
+        }
+    }
+    cout<<"Maximum Number is="<<max;
+}
+
 smaller value
 
 #include <iostream>
@@ -1261,6 +1285,40 @@ int main() {
 cout<<min;
 }
 
+#include <iostream>
+using namespace std;
+int main(){
+    int max=0;
+    int arr[]={2,6,3,7,9,1}
+    for(int i=0;i<6;i++)
+    {
+        if(arr[i]>max){
+            max=arr[i];
+        }
+    }
+    cout<<max;
+}
+
+#include<iostream>
+using namespace std;
+int main(){
+    int val;
+    int num;
+    int max=0;
+    cout<<"Enter Size of Array :-";
+    cin>>val;
+
+    for(int i=0;i<val;i++)
+    {
+        cout<<"Enter Number = ";
+        cin>>num;
+
+        if(num>max){
+            max=num;
+        }
+    }
+    cout<<max;
+}
 
 duplicate
 
