@@ -1320,6 +1320,10 @@ int main(){
     cout<<max;
 }
 
+
+
+
+
 duplicate
 
 #include <iostream>
@@ -1343,6 +1347,7 @@ int main() {
   }
 
 }
+
 
 unique value
 
@@ -1449,6 +1454,31 @@ missing number
 //     }
 // }
 // }
+
+// or 
+
+#include <iostream>
+using namespace std;
+int fmissingn(int arr[],int size)
+{
+    int n=size+1;
+    int sum=n*(n+1)/2;
+    int arrsum=0;
+
+    for(int i=-;i<size; i++)
+    {
+        arrsum+=arr[i]
+    }
+    return sum-arrsum;
+}
+int main()
+{
+    int arr[]={2,3,4,6,7};
+    int size=sizeof(arr)/sizeof(arr[0]);
+    int missnumber=fmissingn(arr,size);
+    cout<<"The Missing Number is :"<<missnumber;
+    return 0
+}
 
 multiple missing number
 
