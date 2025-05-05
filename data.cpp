@@ -4644,3 +4644,170 @@ postorder(root);
 }
 
 //incomplete
+
+
+
+
+
+
+
+
+
+
+
+
+
+// =================   ======================= New Starting OF DSA =================
+
+// 1 = ARRAY
+
+// 1a = Max
+
+
+
+#include <iostream>
+using namespace std;
+int main(){
+int arr[5] = {3, 9, 1, 7, 4};
+int max = arr[0];
+
+for (int i = 1; i < 5; i++) {
+    if (arr[i] > max) {
+        max = arr[i];
+    }
+}
+cout << "Max: " << max;
+}
+
+
+
+// 1b = REVERSE
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter the size of the array: ";
+    cin >> n;
+
+    int arr[n];
+
+
+    cout << "Enter " << n << " elements: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+   
+    int start = 0, end = n - 1;
+    while (start < end) {
+        swap(arr[start], arr[end]);
+        start++;
+        end--;
+    }
+
+    cout << "Reversed array: ";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+
+
+//1c = SORTED
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter the size of the array: ";
+    cin >> n;
+
+    int arr[n]; 
+
+    
+    cout << "Enter " << n << " elements: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+   
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                swap(arr[j], arr[j + 1]);
+            }
+        }
+    }
+
+    cout << "Sorted array: ";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+
+// 1d = kth smallest in array 
+
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int n, k;
+    cout << "Enter the size of the array: ";
+    cin >> n;
+    int arr[n];
+
+    cout << "Enter " << n << " elements: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    cout << "Enter the value of k: ";
+    cin >> k;
+
+    sort(arr, arr + n);
+
+    cout << "The " << k << "th smallest element is: " << arr[k - 1] << endl;
+
+    return 0;
+}
+
+
+
+// 1e = kth largest in array 
+
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int n, k;
+    
+    cout << "Enter the size of the array: ";
+    cin >> n;
+    int arr[n];
+
+    cout << "Enter " << n << " elements: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    cout << "Enter the value of k: ";
+    cin >> k;
+
+    sort(arr, arr + n, greater<int>());
+
+    cout << "The " << k << "th largest element is: " << arr[k - 1] << endl;
+
+    return 0;
+}
