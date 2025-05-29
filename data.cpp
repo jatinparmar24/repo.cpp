@@ -4692,6 +4692,7 @@ int main() {
     cin >> n;
 
     int arr[n];
+    int start = 0, end = n - 1;
 
 
     cout << "Enter " << n << " elements: ";
@@ -4700,7 +4701,6 @@ int main() {
     }
 
    
-    int start = 0, end = n - 1;
     while (start < end) {
         swap(arr[start], arr[end]);
         start++;
@@ -4811,3 +4811,5 @@ int main() {
 
     return 0;
 }
+
+
