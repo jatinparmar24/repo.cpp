@@ -104,5 +104,57 @@ int main() {
 }
 
 
+// Q-6    Anagram      :- description = 	Same characters, different order     :- Technique = sort and compare
 
 
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+bool isAnagram(string str1, string str2) {
+    if (str1.length() != str2.length())
+        return false;
+
+    sort(str1.begin(), str1.end());
+    sort(str2.begin(), str2.end());
+
+    return str1 == str2;
+}
+
+int main() {
+    string s1, s2;
+    cout << "Enter two strings: ";
+    cin >> s1 >> s2;
+
+    if (isAnagram(s1, s2))
+        cout << "The strings are anagrams!" << endl;
+    else
+        cout << "Not anagrams." << endl;
+
+    return 0;
+}
+
+// Q - 7 Remove Duplicates from Sorted Array
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int removeDuplicates(vector<int>& arr) {
+    if (arr.empty()) return 0;
+    int j = 0;
+    for (int i = 1; i < arr.size(); i++) {
+        if (arr[i] != arr[j]) {
+            j++;
+            arr[j] = arr[i];
+        }
+    }
+    return j + 1;
+}
+
+int main() {
+    vector<int> arr = {1, 1, 2, 2, 3};
+    int len = removeDuplicates(arr);
+    for (int i = 0; i < len; i++) cout << arr[i] << " ";
+    return 0;
+}
