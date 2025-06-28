@@ -158,3 +158,45 @@ int main() {
     for (int i = 0; i < len; i++) cout << arr[i] << " ";
     return 0;
 }
+
+
+// remove duplicate from array
+
+#include <iostream>
+using namespace std;
+
+void removeDuplicates(int arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        bool repeated = false;
+        for (int j = 0; j < i; j++) {
+            if (arr[i] == arr[j]) {
+                repeated = true;
+                break;
+            }
+        }
+        if (!repeated)
+            cout << arr[i] << " ";
+    }
+}
+
+int main() {
+    int arr[] = {1, 2, 2, 3, 4, 4};
+    removeDuplicates(arr, 6); 
+}
+
+// FizzBuzz count
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 1; i <= 50; i++) {
+        if (i % 15 == 0)
+            cout << "FizzBuzz\n";
+        else if (i % 3 == 0)
+            cout << "Fizz\n";
+        else if (i % 5 == 0)
+            cout << "Buzz\n";
+        else
+            cout << i << endl;
+    }
+}
