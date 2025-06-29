@@ -200,3 +200,54 @@ int main() {
             cout << i << endl;
     }
 }
+
+
+
+// Question 5: Sort 0s, 1s and 2s (Dutch National Flag Problem)
+
+
+void sortColors(int arr[], int n) {
+    int low = 0, mid = 0, high = n - 1;
+
+    while(mid <= high) {
+        if(arr[mid] == 0)
+            swap(arr[low++], arr[mid++]);
+        else if(arr[mid] == 1)
+            mid++;
+        else
+            swap(arr[mid], arr[high--]);
+    }
+}
+
+
+// Find Duplicate Number (Floyd's Cycle Detection)
+// Array has n+1 integers, values between 1 to n, one value is repeated.
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int findDuplicate(vector<int>& nums) {
+    int slow = nums[0], fast = nums[0];
+
+    // point 1: Detect cycle
+    do {
+        slow = nums[slow];
+        fast = nums[nums[fast]];
+    } while(slow != fast);
+
+    // point 2: Find entry point
+    fast = nums[0];
+    while(slow != fast) {
+        slow = nums[slow];
+        fast = nums[fast];
+    }
+
+    return slow;
+}
+
+int main() {
+    vector<int> nums = {1, 3, 4, 2, 2};
+    cout << "Duplicate number: " << findDuplicate(nums) << endl;
+    return 0;
+}
