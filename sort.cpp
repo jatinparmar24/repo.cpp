@@ -251,3 +251,55 @@ int main() {
     cout << "Duplicate number: " << findDuplicate(nums) << endl;
     return 0;
 }
+
+
+
+// question is to re arrange positive and negative number===
+// Given an array, rearrange it so that positive and negative numbers appear 
+// alternately. If one of them is exhausted, append the rest at the end.
+// Maintain the original order of appearance.
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void rearrange(vector<int>& arr) {
+    vector<int> pos, neg;
+
+    // Separate positives and negatives
+    for (int num : arr) {
+        if (num >= 0)
+            pos.push_back(num);
+        else
+            neg.push_back(num);
+    }
+
+    vector<int> result;
+    int i = 0, j = 0;
+
+    // Alternate positives and negatives
+    while (i < pos.size() && j < neg.size()) {
+        result.push_back(pos[i++]);
+        result.push_back(neg[j++]);
+    }
+
+    // Add remaining
+    while (i < pos.size())
+        result.push_back(pos[i++]);
+
+    while (j < neg.size())
+        result.push_back(neg[j++]);
+
+    // Copy back to original array
+    arr = result;
+}
+
+int main() {
+    vector<int> arr = {3, -2, -1, 6, -3, 2};
+    rearrange(arr);
+    for (int num : arr)
+        cout << num << " ";
+
+    return 0;
+}
